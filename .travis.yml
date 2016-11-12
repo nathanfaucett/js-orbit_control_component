@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "6"
+  - "6.1"
+  - "stable"
+  - "iojs"
+
+before_install: npm install -g @nathanfaucett/task-cli
+
+script: 'task jshint && npm test'
