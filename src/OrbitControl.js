@@ -8,6 +8,9 @@ var environment = require("@nathanfaucett/environment"),
 var Component = sceneGraph.Component,
     ComponentPrototype = Component.prototype,
 
+    MIN_POLOR = mathf.PI * 0.05,
+    MAX_POLOR = mathf.PI - MIN_POLOR,
+
     NONE = 1,
     ROTATE = 2,
     PAN = 3,
@@ -219,6 +222,9 @@ function OrbitControl_update(_this) {
     vec3.sub(offset, position, target);
     theta = mathf.atan2(offset[0], offset[1]);
     phi = mathf.atan2(mathf.sqrt(offset[0] * offset[0] + offset[1] * offset[1]), offset[2]);
+
+    phi = mathf.max(MIN_POLOR, mathf.min(MAX_POLOR, phi));
+    phi = mathf.max(mathf.EPSILON, mathf.min(mathf.PI - mathf.EPSILON, phi));
 
     theta += _this._thetaDelta;
     phi += _this._phiDelta;
