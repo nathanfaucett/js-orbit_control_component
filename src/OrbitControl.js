@@ -8,9 +8,6 @@ var environment = require("@nathanfaucett/environment"),
 var Component = sceneGraph.Component,
     ComponentPrototype = Component.prototype,
 
-    MIN_POLOR = 0,
-    MAX_POLOR = mathf.PI,
-
     NONE = 1,
     ROTATE = 2,
     PAN = 3,
@@ -225,9 +222,6 @@ function OrbitControl_update(_this) {
 
     theta += _this._thetaDelta;
     phi += _this._phiDelta;
-
-    phi = mathf.max(MIN_POLOR, mathf.min(MAX_POLOR, phi));
-    phi = mathf.max(mathf.EPSILON, mathf.min(mathf.PI - mathf.EPSILON, phi));
 
     radius = vec3.length(offset) * _this._scale;
 
