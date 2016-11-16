@@ -1,5 +1,4 @@
-var environment = require("@nathanfaucett/environment"),
-    mathf = require("@nathanfaucett/mathf"),
+var mathf = require("@nathanfaucett/mathf"),
     vec3 = require("@nathanfaucett/vec3"),
     isNullOrUndefined = require("@nathanfaucett/is_null_or_undefined"),
     sceneGraph = require("@nathanfaucett/scene_graph");
@@ -124,16 +123,14 @@ OrbitControlPrototype.init = function() {
 
     ComponentPrototype.init.call(this);
 
-    if (environment.mobile) {
-        input.on("touchstart", this.onTouchStart);
-        input.on("touchend", this.onTouchEnd);
-        input.on("touchmove", this.onTouchMove);
-    } else {
-        input.on("mouseup", this.onMouseUp);
-        input.on("mousedown", this.onMouseDown);
-        input.on("mousemove", this.onMouseMove);
-        input.on("wheel", this.onMouseWheel);
-    }
+    input.on("touchstart", this.onTouchStart);
+    input.on("touchend", this.onTouchEnd);
+    input.on("touchmove", this.onTouchMove);
+
+    input.on("mouseup", this.onMouseUp);
+    input.on("mousedown", this.onMouseDown);
+    input.on("mousemove", this.onMouseMove);
+    input.on("wheel", this.onMouseWheel);
 
     return this;
 };
@@ -145,16 +142,14 @@ OrbitControlPrototype.clear = function(emitEvent) {
 
     ComponentPrototype.clear.call(this, emitEvent);
 
-    if (environment.mobile) {
-        input.off("touchstart", this.onTouchStart);
-        input.off("touchend", this.onTouchEnd);
-        input.off("touchmove", this.onTouchMove);
-    } else {
-        input.off("mouseup", this.onMouseUp);
-        input.off("mousedown", this.onMouseDown);
-        input.off("mousemove", this.onMouseMove);
-        input.off("wheel", this.onMouseWheel);
-    }
+    input.off("touchstart", this.onTouchStart);
+    input.off("touchend", this.onTouchEnd);
+    input.off("touchmove", this.onTouchMove);
+
+    input.off("mouseup", this.onMouseUp);
+    input.off("mousedown", this.onMouseDown);
+    input.off("mousemove", this.onMouseMove);
+    input.off("wheel", this.onMouseWheel);
 
     return this;
 };

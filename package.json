@@ -26,17 +26,14 @@
     "@nathanfaucett/geometry": "git://github.com/nathanfaucett/js-geometry.git",
     "@nathanfaucett/webgl_plugin": "git://github.com/nathanfaucett/js-webgl_plugin.git",
     "@nathanfaucett/mesh_renderer": "git://github.com/nathanfaucett/js-mesh_renderer.git",
+    "@nathanfaucett/scene_renderer": "git://github.com/nathanfaucett/js-scene_renderer.git",
     "@nathanfaucett/comn": "^0.0.13",
     "@nathanfaucett/task": "^0.0.7",
     "gulp-jsbeautifier": "^2.0.3",
     "gulp-jshint": "^2.0.1",
-    "jshint": "^2.9.3",
-    "tap-spec": "^4.1.0",
-    "tape": "^4.2.0",
-    "zuul": "^3.11.0"
+    "jshint": "^2.9.3"
   },
   "dependencies": {
-    "@nathanfaucett/environment": "^0.0.2",
     "@nathanfaucett/input": "git://github.com/nathanfaucett/js-input.git",
     "@nathanfaucett/is_null_or_undefined": "^0.0.1",
     "@nathanfaucett/mathf": "^0.0.3",
