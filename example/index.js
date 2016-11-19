@@ -99,10 +99,10 @@ geometry.load(function onLoad(error) {
     (function render() {
         var time = scene.time;
 
-        input.update(time.time, time.frame);
+        input.update(time.current, time.frame);
         scene.update();
         renderer.render();
-        
+
         setTimeout(render, 16);
     }());
 });
